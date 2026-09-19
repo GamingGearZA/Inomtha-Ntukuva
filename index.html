@@ -1,128 +1,542 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inomtha Ntukuva | Student Portfolio</title>
-<meta name="description" content="Official portfolio of Inomtha Ntukuva, a student interested in software development, artificial intelligence and technology.">
-<meta name="author" content="Inomtha Ntukuva">
-<meta name="robots" content="index, follow">  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official portfolio of Inomtha Ntukuva — student, builder and technology enthusiast. Explore achievements, projects, GamingGearZA and future digital products." />
+  <meta name="author" content="Inomtha Ntukuva" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070B14" />
+  <meta property="og:title" content="Inomtha Ntukuva | Student Portfolio" />
+  <meta property="og:description" content="Projects, achievements, GamingGearZA and technology interests by Inomtha Ntukuva." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gaminggearza.github.io/Inomtha-Ntukuva/" />
+  <link rel="canonical" href="https://gaminggearza.github.io/Inomtha-Ntukuva/" />
+  <title>Inomtha Ntukuva | Student Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root{
+      --bg:#070b14;
+      --bg2:#0a1020;
+      --card:#0f1728;
+      --card2:#111c31;
+      --text:#f8fafc;
+      --muted:#9eabc1;
+      --line:rgba(148,163,184,.16);
+      --blue:#59a9ff;
+      --purple:#9d7bff;
+      --accent:#79d2ff;
+      --shadow:0 24px 70px rgba(0,0,0,.28);
+      --radius:22px;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0f19;
-            color: white;
-            min-height: 100vh;
-        }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 2%,rgba(89,169,255,.14),transparent 30%),
+        radial-gradient(circle at 90% 18%,rgba(157,123,255,.12),transparent 28%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      line-height:1.65;
+      min-height:100vh;
+    }
 
-        nav {
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,88%);margin:auto}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(7,11,20,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
 
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 8%;
-            max-width: 1000px;
-        }
+    .nav-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-        .intro {
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
+    .brand{
+      font-size:1.08rem;
+      font-weight:900;
+      letter-spacing:.1em;
+    }
 
-        h1 {
-            font-size: clamp(48px, 8vw, 90px);
-            line-height: 1;
-            margin-bottom: 25px;
-        }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-        .description {
-            max-width: 650px;
-            font-size: 20px;
-            line-height: 1.6;
-            color: #c9ced8;
-        }
+    .nav-links a{
+      color:var(--muted);
+      font-size:.94rem;
+      transition:.2s ease;
+    }
 
-        .projects {
-            padding: 70px 8%;
-        }
+    .nav-links a:hover{color:white}
 
-        .projects h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+    .hero{
+      min-height:82vh;
+      display:grid;
+      align-items:center;
+      padding:82px 0;
+    }
 
-        .card {
-            max-width: 650px;
-            padding: 25px;
-            border: 1px solid #303747;
-            border-radius: 16px;
-        }
+    .eyebrow,
+    .section-kicker{
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      font-weight:900;
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+    h1{
+      font-size:clamp(3.6rem,10vw,7.2rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+      margin:16px 0 26px;
+      max-width:900px;
+    }
 
-        footer {
-            padding: 40px 8%;
-            color: #9da5b4;
-        }
-    </style>
+    .hero-copy{
+      color:var(--muted);
+      max-width:720px;
+      font-size:clamp(1.05rem,2vw,1.22rem);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:32px;
+    }
+
+    .btn{
+      min-height:48px;
+      padding:0 20px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      border:none;
+      box-shadow:0 0 36px rgba(89,169,255,.18);
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    section{padding:86px 0}
+
+    .section-head{margin-bottom:32px}
+    .section-head h2{
+      font-size:clamp(2.1rem,5vw,3.4rem);
+      letter-spacing:-.04em;
+      margin-top:8px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:740px;
+      margin-top:10px;
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    .card{
+      background:linear-gradient(180deg,rgba(17,28,49,.92),rgba(13,21,37,.94));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{font-size:1.22rem;margin-bottom:10px}
+    .card p,.card li{color:var(--muted)}
+    .card ul{padding-left:20px;margin-top:14px}
+    .card li+li{margin-top:10px}
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:6px 10px;
+      color:#d7e2f3;
+      font-size:.78rem;
+      margin-bottom:14px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .about-card{min-height:190px}
+
+    .achievement-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .achievement-card::after{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      background:rgba(89,169,255,.08);
+      right:-60px;
+      top:-60px;
+    }
+
+    .project-card{
+      min-height:230px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .project-meta{
+      color:var(--accent);
+      font-size:.85rem;
+      font-weight:800;
+      margin-top:18px;
+    }
+
+    .stock-grid{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .stock-item{
+      min-height:140px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .stock-item .number{
+      color:var(--blue);
+      font-size:.8rem;
+      font-weight:900;
+    }
+
+    .stock-item strong{font-size:1rem}
+    .stock-item small{color:var(--muted)}
+
+    .notice{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .skill{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.025);
+      color:#d7e2f3;
+    }
+
+    .link-card{
+      display:block;
+      transition:.2s ease;
+    }
+
+    .link-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(89,169,255,.4);
+    }
+
+    .link-arrow{
+      color:var(--blue);
+      font-weight:900;
+      margin-top:16px;
+      display:inline-block;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:34px 0 48px;
+      color:var(--muted);
+      margin-top:30px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    @media(max-width:920px){
+      .grid-3{grid-template-columns:1fr 1fr}
+      .stock-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .nav-links{display:none}
+    }
+
+    @media(max-width:650px){
+      .grid-2,.grid-3,.stock-grid{grid-template-columns:1fr}
+      .hero{min-height:75vh;padding:68px 0}
+      section{padding:66px 0}
+      h1{font-size:clamp(3.2rem,18vw,5rem)}
+    }
+  </style>
 </head>
 
 <body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">IN.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#stock">Stock</a>
+        <a href="#goals">Goals</a>
+        <a href="#links">Links</a>
+      </div>
+    </div>
+  </nav>
 
-    <nav>
-        <div class="logo">IN.</div>
-    </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <p class="eyebrow">Student • Builder • Technology Enthusiast</p>
+        <h1>Inomtha Ntukuva</h1>
+        <p class="hero-copy">
+          I'm a student at Curro Delft with interests in software development,
+          artificial intelligence and technology. I enjoy building projects,
+          learning new skills and turning ideas into real digital products.
+        </p>
 
-    <main>
-        <section class="hero">
-            <p class="intro">Hello, I'm</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my projects</a>
+          <a class="btn" href="#achievements">View achievements</a>
+        </div>
+      </div>
+    </section>
 
-            <h1>Inomtha Ntukuva</h1>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">About me</span>
+          <h2>Building, learning and creating.</h2>
+          <p>
+            This website is my digital portfolio — a place for my achievements,
+            technology projects, GamingGearZA and the ideas I'm working on next.
+          </p>
+        </div>
 
-            <p class="description">
-                I'm a student at Curro Delft with interests in software
-                development, artificial intelligence and technology.
-                I enjoy building projects, learning new skills and turning
-                ideas into real digital products.
-            </p>
-        </section>
+        <div class="grid grid-3">
+          <article class="card about-card">
+            <span class="tag">Software Development</span>
+            <h3>Building digital ideas</h3>
+            <p>I enjoy learning how websites, apps and other digital products are planned and created.</p>
+          </article>
 
-        <section class="projects">
-            <h2>Projects</h2>
+          <article class="card about-card">
+            <span class="tag">Artificial Intelligence</span>
+            <h3>AI & technology</h3>
+            <p>I'm interested in how technology and AI can help solve real problems and improve everyday experiences.</p>
+          </article>
 
-            <div class="card">
-                <h3>Building what's next.</h3>
-                <p>My software and technology projects will be featured here.</p>
+          <article class="card about-card">
+            <span class="tag">Learning</span>
+            <h3>Always improving</h3>
+            <p>I enjoy learning new skills, testing new ideas and improving my projects as I gain experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Achievements</span>
+          <h2>Certificates & achievements.</h2>
+          <p>A selection of academic and programme achievements I have earned.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card achievement-card">
+            <span class="tag">School Certificates</span>
+            <h3>Academic & character achievements</h3>
+            <ul>
+              <li>Certificate of Excellence: Mathematics</li>
+              <li>Certificate of Excellence: Social Sciences</li>
+              <li>Certificate of Acknowledgement for commitment, attitude and effort</li>
+              <li>Certificate of Good Behavior</li>
+              <li>Certificate of Neatness</li>
+            </ul>
+          </article>
+
+          <article class="card achievement-card">
+            <span class="tag">Numeric Maths Program 2025</span>
+            <h3>Programme awards</h3>
+            <ul>
+              <li>Perfect Attendance Award 2025</li>
+              <li>Commitment to Numeric Classes Award 2025</li>
+              <li>Most Helpful Learner Award</li>
+              <li>Excellent Achievement: Multiplication Drills</li>
+              <li>Great Attendance: Term 3 2025</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Projects</span>
+          <h2>What I'm building.</h2>
+          <p>Projects and ideas that reflect my interests in technology, software and entrepreneurship.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card project-card">
+            <div>
+              <span class="tag">Sports Technology</span>
+              <h3>Age Fair Sports</h3>
+              <p>
+                A project focused on supporting fair age-group competition in sport
+                through player age verification.
+              </p>
             </div>
-        </section>
-    </main>
+            <span class="project-meta">IN DEVELOPMENT</span>
+          </article>
 
-    <footer>
-        © 2026 Inomtha Ntukuva
-    </footer>
+          <article class="card project-card">
+            <div>
+              <span class="tag">Gaming & Technology</span>
+              <h3>GamingGearZA</h3>
+              <p>
+                My growing gaming and technology brand, built around gaming setup
+                products, digital projects and future ideas.
+              </p>
+            </div>
+            <span class="project-meta">GROWING PROJECT</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="stock">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">GamingGearZA</span>
+          <h2>Planned stock.</h2>
+          <p>
+            Ten product categories planned for GamingGearZA. Product availability,
+            prices and purchase links will be added when the shop is ready.
+          </p>
+        </div>
+
+        <div class="stock-grid">
+          <article class="card stock-item"><span class="number">01</span><strong>Cable Clips</strong><small>Desk setup</small></article>
+          <article class="card stock-item"><span class="number">02</span><strong>Phone Stand</strong><small>Accessories</small></article>
+          <article class="card stock-item"><span class="number">03</span><strong>RGB Strip Lights</strong><small>Gaming setup</small></article>
+          <article class="card stock-item"><span class="number">04</span><strong>Gaming Mouse</strong><small>Peripherals</small></article>
+          <article class="card stock-item"><span class="number">05</span><strong>Mechanical Keyboard</strong><small>Peripherals</small></article>
+          <article class="card stock-item"><span class="number">06</span><strong>Gaming Headset</strong><small>Audio</small></article>
+          <article class="card stock-item"><span class="number">07</span><strong>Desk Mat</strong><small>Desk setup</small></article>
+          <article class="card stock-item"><span class="number">08</span><strong>USB Microphone</strong><small>Audio</small></article>
+          <article class="card stock-item"><span class="number">09</span><strong>Controller Stand</strong><small>Accessories</small></article>
+          <article class="card stock-item"><span class="number">10</span><strong>Laptop Cooler</strong><small>Accessories</small></article>
+        </div>
+
+        <p class="notice">Shop coming soon — stock shown here is planned, not current availability.</p>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Skills & goals</span>
+          <h2>Where I'm heading.</h2>
+          <p>I want to keep developing my skills, create useful technology and grow the projects I start.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Interests & skills</h3>
+            <div class="skills" style="margin-top:18px">
+              <span class="skill">Software Development</span>
+              <span class="skill">Artificial Intelligence</span>
+              <span class="skill">Technology</span>
+              <span class="skill">Coding</span>
+              <span class="skill">Problem Solving</span>
+              <span class="skill">Digital Projects</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Goals</h3>
+            <ul>
+              <li>Build more apps and software projects</li>
+              <li>Learn more about artificial intelligence</li>
+              <li>Grow GamingGearZA</li>
+              <li>Create useful digital products</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">Online</span>
+          <h2>Find my work.</h2>
+          <p>Public links where you can see more of my projects and GamingGearZA.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <a class="card link-card" href="https://beacons.ai/gaminggearza" target="_blank" rel="noopener noreferrer">
+            <span class="tag">Beacons</span>
+            <h3>GamingGearZA</h3>
+            <p>Visit my public Beacons page for more links and updates.</p>
+            <span class="link-arrow">Open Beacons →</span>
+          </a>
+
+          <a class="card link-card" href="https://github.com/GamingGearZA" target="_blank" rel="noopener noreferrer">
+            <span class="tag">GitHub</span>
+            <h3>GamingGearZA on GitHub</h3>
+            <p>Explore the repositories behind my website and projects.</p>
+            <span class="link-arrow">Open GitHub →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Inomtha Ntukuva</span>
+      <span>Built with HTML & CSS</span>
+    </div>
+  </footer>
 </body>
 </html>
-```
